@@ -1,0 +1,83 @@
+/*  
+  Paleta de cores
+  - Background: #2C2B3D
+  - Txt0: #FFFFFF
+  - Txt1: #C2C2C2
+  - Txt2: #7D7987
+  - Green: #00BFA6
+*/
+
+/* Geral */
+* {
+  margin: 0;
+}
+
+body {
+  color: #FFFFFF;
+  background-color: #2C2B3D;
+  font-size: 14px;
+  font-family: 'Jetbrains Mono', cursive;
+  text-align: center;
+}
+
+#page {
+  padding: 70px 100px;
+  width: 1083px;
+  margin: auto;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 64px;
+} 
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Main */
+main {
+  display: flex;
+  justify-content: space-between;
+  margin: 101px auto 157px;
+}
+
+section h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px; 
+  margin-bottom: 59px;
+}
+
+#texts {
+  font-family: 'Open Sans', cursive;
+  font-size: 16px;
+  line-height: 28px; 
+  font-weight: 400;
+  color: #C2C2C2;
+}
+
+span {
+  color: #00BFA6;
+}
+
+/* Footer */
+#line {
+  border: 1px solid #00BFA6;
+  width: 568px;
+  margin: auto auto 27px;
+}
+
+#detail {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
