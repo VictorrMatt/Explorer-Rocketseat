@@ -195,3 +195,7 @@ footer .button:hover {
   background: #0dbd5c;
   cursor: pointer;
 }
+
+input:invalid {
+  border: 1px solid red;
+}
