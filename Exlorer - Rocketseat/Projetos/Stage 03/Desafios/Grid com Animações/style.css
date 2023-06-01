@@ -1,0 +1,296 @@
+/* GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Staatliches";
+  font-size: 2rem;
+
+  text-align: center;
+
+  background-color: #eff1ff;
+}
+
+#page {
+  min-width: 32.0rem;
+  padding: 2.2rem 3.7rem 6.4rem;
+}
+
+/* HEADER */
+header {
+  height: 30rem;
+  min-width: 32.0rem;
+
+  background-color: #8e9aaf;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+header img {
+  width: 20rem;
+  height: auto;
+
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+}
+
+header h1 {
+  font-size: 4rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.1em;
+
+  width: 100%;
+
+  background-color: #cbc0d3;
+  color: #ffffff;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+  padding: 0.8rem 0;
+}
+
+header p {
+  display: none;
+}
+
+/* CONTENT */
+main p,
+header p {
+  font-family: "Palanquin";
+  line-height: 2rem;
+
+  min-width: 24.6rem;
+  max-width: 37rem;
+
+  color: #8e9aaf;
+
+  margin: 0 auto 6.3rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  position: relative;
+}
+
+.card h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+
+  color: #4a4e69;
+
+  background: #feeafa;
+  border-radius: 3.5rem 2rem 3.5rem 3.5rem;
+
+  width: min-content;
+
+  padding: 0.4rem 3.2rem;
+  margin: 1.6rem;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.card img {
+  min-width: 24.6rem;
+
+  object-fit: cover;
+  border-radius: 20px;
+
+  filter: grayscale(1) brightness(0.9) opacity(0.9);
+
+  transition: transform 200ms, filter 200ms;
+}
+
+.card img:hover {
+  filter: grayscale(0) brightness(1) opacity(1);
+  transform: scale(1.07);
+}
+
+.card img:hover ~ h2 {
+  animation-name: focus;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+#container {
+  display: grid;
+  gap: 3.2rem;
+}
+
+#container div:nth-child(1) img,
+div:nth-child(3) img {
+  height: 25rem;
+}
+
+#container div:nth-child(2) img,
+div:nth-child(4) img {
+  height: 45rem;
+}
+
+/* Tornando o quinto card invisivel, visivel apenas em resoluções maiores. */
+#container div:nth-child(5) {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  main #container .card > img {
+    height: 35rem;
+  }
+
+  #page {
+    padding: 2.2rem 3rem 6.4rem;
+  }
+
+  #container {
+    grid-template-areas:
+      "A B"
+      "C D";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #container div:nth-child(1) {
+    grid-area: A;
+  }
+
+  #container div:nth-child(2) {
+    grid-area: B;
+  }
+
+  #container div:nth-child(3) {
+    grid-area: C;
+  }
+
+  #container div:nth-child(4) {
+    grid-area: D;
+  }
+}
+
+@media (min-width: 1024px) {
+  main p {
+    display: none;
+  }
+
+  body {
+    display: flex;
+  }
+
+  #page {
+    padding: 0rem;
+    margin: 0 auto;
+    height: 100vh;
+  }
+
+  header p {
+    display: block;
+    color: #ffffff;
+    margin: 0 2rem;
+  }
+
+  header {
+    height: 100vh;
+    width: 37.7rem;
+
+    background-color: #8e9aaf;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  main #container .card > img {
+    height: 25rem;
+  }
+
+  #container {
+    grid-template-areas:
+      "A B"
+      "E E"
+      "C D";
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding: 0 3.2rem;
+    height: 100vh;
+    align-content: center;
+  }
+
+  #container div:nth-child(5) {
+    display: block;
+    grid-area: E;
+  }
+}
+
+/* LOADING PAGE ANIMATIONS */
+body.animation-trigger,
+main p,
+header img {
+  animation-name: going_down;
+  animation-duration: 700ms;
+  animation-delay: 350ms;
+  animation-iteration-count: 1;
+}
+
+body.animation-trigger,
+#container,
+header h1,
+header p {
+  animation-name: going_up;
+  animation-duration: 700ms;
+  animation-delay: 350ms;
+  animation-iteration-count: 1;
+}
+
+/* ANIMATIONS */
+@keyframes focus {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes going_up {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes going_down {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
