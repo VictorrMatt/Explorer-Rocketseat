@@ -1,0 +1,107 @@
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw; /* 144rem */
+  height: 100vh; /* 103rem*/
+
+  margin: auto;
+
+  position: relative;
+
+  background-image: url("images/fundo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper + .wrapper {
+  margin-top: 5.3rem;
+}
+
+.wrapper div {
+  background-image: url(images/toupeira6.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-position: bottom;
+
+  height: 17rem;
+  width: 22.81rem;
+}
+
+.active {
+  animation-name: saindo;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+}
+
+.container .wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 5.3rem;
+}
+
+@keyframes saindo {
+  0% {
+    background-image: url(images/toupeira1.svg);
+  }
+
+  25% {
+    background-image: url(images/toupeira2.svg);
+  }
+
+  50% {
+    background-image: url(images/toupeira3.svg);
+  }
+
+  75% {
+    background-image: url(images/toupeira4.svg);
+  }
+
+  100% {
+    background-image: url(images/toupeira5.svg);
+  }
+}
+
+/* #container {
+  width: 144rem;
+  height: 102.4rem;
+  
+  margin: auto;
+}
+
+#garden-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: absolute;
+
+}
+
+#garden-container div:nth-child(1) {
+  background-color: red;
+}
+
+#garden-container div:nth-child(2) {
+  background-color: green;
+}
+
+#garden-container div:nth-child(3) {
+  background-color: blue;
+} */
