@@ -1,0 +1,341 @@
+/* GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+#page {
+  min-width: 43.5rem;
+}
+
+body {
+  font-weight: 600;
+  font-family: "Mulish", cursive;
+}
+
+header,
+footer p {
+  text-align: center;
+}
+
+header h1,
+main div h2,
+fieldset legend {
+  font-weight: 900;
+}
+
+header,
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* COLORS */
+header h1,
+.card div h2,
+form legend {
+  color: #b52184;
+}
+
+header p,
+.card div p,
+input[type="text"],
+textarea {
+  color: #312d64;
+}
+
+input[type="button"],
+footer p {
+  color: white;
+}
+
+/* HEADER */
+header {
+  gap: 1.7rem;
+}
+
+#banner {
+  width: 36.4rem;
+  height: auto;
+}
+
+#banner-det img {
+  width: 5.85rem;
+  height: 10.5rem;
+}
+
+#banner-text h1 {
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+#banner-text p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+#banner,
+#banner-det {
+  margin: 0 auto;
+}
+
+#banner-det {
+  margin-top: 1.8rem;
+  margin-bottom: 9.3rem;
+}
+
+/* MAIN */
+main,
+footer p,
+input[type="button"] {
+  background: linear-gradient(96.21deg, #343193 0%, #302c63 99.68%);
+}
+
+main {
+  padding: 5.3rem 3.9rem;
+  gap: 4.9rem;
+}
+
+main img {
+  width: 8rem;
+  height: 8rem;
+}
+
+.card {
+  background-color: white;
+  padding: 2.6rem;
+  border-radius: 20px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  transition: transform 200ms;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+main div img {
+  margin-bottom: 3.3rem;
+}
+
+main div h2 {
+  font-size: 2.9rem;
+  line-height: 3.7rem;
+}
+
+main div p {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  width: 26.5rem;
+}
+
+main div h2,
+fieldset legend {
+  margin-bottom: 1.9rem;
+}
+
+/* FOOTER */
+fieldset {
+  border: none;
+  width: 100%;
+  padding: 7.8rem 3.9rem 6.5rem;
+}
+
+#form-container {
+  max-width: 119rem;
+  margin: auto;
+}
+
+fieldset legend {
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  max-width: 59.2rem;
+}
+
+input[type="button"],
+input[type="text"],
+textarea {
+  font-family: "Mulish", cursive;
+  border: none;
+}
+
+form textarea {
+  height: 12.6rem;
+  resize: none;
+}
+
+input[type="text"],
+textarea {
+  font-size: 1.6rem;
+  line-height: 100%;
+  width: 100%;
+  border: 2px solid #312d64;
+}
+
+input[type="button"] {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  width: 15.1rem;
+  height: 6rem;
+  transition: width 200ms;
+}
+
+input[type="button"]:hover {
+  width: 50%;
+}
+
+input,
+textarea {
+  padding: 1.6rem;
+  border-radius: 1.6rem;
+}
+
+.input-with-img {
+  position: relative;
+}
+
+.input-with-img img {
+  width: 2.4rem;
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 50%;
+  left: 1.4rem;
+}
+
+.input-with-img input[type="text"] {
+  padding-left: 4.5rem;
+}
+
+footer p {
+  padding: 3.2rem 0;
+  font-size: 1.9rem;
+  line-height: 2.4rem;
+}
+
+/* ANIMATIONS */
+#banner,
+.card img {
+  animation-name: dropdown;
+  animation-iteration-count: 1;
+  animation-duration: 700ms;
+  animation-delay: 350ms;
+}
+
+#banner-text,
+.card,
+.card div,
+form {
+  animation-name: goingup;
+  animation-iteration-count: 1;
+  animation-duration: 700ms;
+  animation-delay: 350ms;
+}
+
+
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goingup {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* MEDIAS */
+@media (min-width: 1290px) {
+  header {
+    gap: 0;
+    max-width: 151rem;
+    height: 83.6rem;
+    margin: auto;
+
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+
+    background-image: url(Images/banner-big.png);
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 2.9rem);
+  }
+
+  #banner {
+    visibility: hidden;
+  }
+
+  #banner-text h1 {
+    font-size: 5.8rem;
+    line-height: 7.3rem;
+  }
+
+  #banner-text p {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+
+  #banner,
+  #banner-det {
+    margin: 0;
+  }
+
+  #text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #banner-det {
+    transform: translateY(17.9rem);
+  }
+
+  .card {
+    margin: 0;
+    max-width: 36.6rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  input[type="button"]:hover {
+    width: 35%;
+  }
+}
+
+@media (min-width: 1440px) {
+  fieldset {
+    background-image: url(Images/back.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+  }
+}
