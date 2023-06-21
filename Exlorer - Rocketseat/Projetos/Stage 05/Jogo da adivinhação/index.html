@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="box" id="game-screen">
+        <div>
+          <h1 id="feedback">Jogo da Adivinhação</h1>
+          <p>Adivinhe o número entre 1 e 10</p>
+        </div>
+
+        <form>
+          <input id="guess" type="number" maxlength="1" />
+          <input
+            id="try"
+            onclick="makeAGuess(event)"
+            type="submit"
+            value="Tentar"
+          />
+        </form>
+      </div>
+
+      <div class="box hide" id="end-screen">
+        <h2>Acertou em <span id="times">x</span> tentativas!</h2>
+
+        <fieldset>
+          <input id="again" type="button" value="Jogar novamente" />
+        </fieldset>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
