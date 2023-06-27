@@ -1,18 +1,24 @@
 let getElement = (id) => document.getElementById(id);
 
-let modal = getElement("modal");
-let closeButton = getElement("close");
-let modalIMC = getElement("imc");
+const Modal = {
+  modal: getElement("modal"),
+  closeButton: getElement("close"),
+  IMC: getElement("imc"),
 
-closeButton.addEventListener("click", toggleModal);
+  toggle() {
+    Modal.modal.classList.toggle("hide");
+  }
+};
 
-function myIMC(event) {
+Modal.closeButton.onclick = Modal.toggle;
+
+export function myIMC(event) {
   event.preventDefault();
 
   let imc = currentIMC();
   if (typeof imc == "number") {
     updateImcOnScreen(imc);
-    toggleModal();
+    Modal.toggle();
   }
 }
 
@@ -29,9 +35,5 @@ function currentIMC() {
 }
 
 function updateImcOnScreen(imc) {
-  modalIMC.innerText = imc.toFixed(2);
-}
-
-function toggleModal() {
-  modal.classList.toggle("hide");
+  Modal.IMC.innerText = imc.toFixed(2);
 }
