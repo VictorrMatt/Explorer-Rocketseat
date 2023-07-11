@@ -1,4 +1,3 @@
-import { getElement, clickListener } from "./utils.js";
 import {
   minutesDisplay,
   secondsDisplay,
@@ -11,7 +10,13 @@ import {
   coffeCard,
   fireplaceCard,
 } from "./elements.js";
+import setListeners from "./listeners.js";
 
-clickListener(playButton, () => {
-/*   alert("HELLO");
- */});
+setListeners({
+  playButton,
+  stopButton,
+  sumButton,
+  subButton,
+  minutesDisplay,
+  secondsDisplay,
+});
