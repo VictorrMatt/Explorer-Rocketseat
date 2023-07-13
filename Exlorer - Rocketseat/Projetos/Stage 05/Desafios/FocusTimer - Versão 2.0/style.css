@@ -68,8 +68,8 @@ img {
   scale: 1.2;
 }
 
-.cards-box img.active {
-  /* filter: grayscale(); */
+.rainSetting {
+  filter: grayscale();
 }
 
 .controls,

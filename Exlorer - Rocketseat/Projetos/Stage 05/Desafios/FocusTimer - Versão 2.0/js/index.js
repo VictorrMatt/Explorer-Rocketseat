@@ -19,4 +19,8 @@ setListeners({
   subButton,
   minutesDisplay,
   secondsDisplay,
+  forestCard,
+  rainCard,
+  coffeCard,
+  fireplaceCard,
 });

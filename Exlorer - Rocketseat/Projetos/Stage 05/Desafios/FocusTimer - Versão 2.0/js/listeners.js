@@ -8,12 +8,12 @@ export default function setListeners({
   subButton,
   minutesDisplay,
   secondsDisplay,
+  forestCard,
+  rainCard,
+  coffeCard,
+  fireplaceCard,
 }) {
   let controls = Controls({
-    playButton,
-    stopButton,
-    sumButton,
-    subButton,
     minutesDisplay,
     secondsDisplay,
   });
@@ -22,4 +22,8 @@ export default function setListeners({
   clickListener(stopButton, controls.stop);
   clickListener(sumButton, controls.add);
   clickListener(subButton, controls.decrease);
+  clickListener(forestCard, controls.forestToggle);
+  clickListener(rainCard, controls.rainToggle);
+  clickListener(fireplaceCard, controls.fireplaceToggle);
+  clickListener(coffeCard, controls.coffeToggle);
 }
