@@ -6,6 +6,7 @@ export default function Timer({ minutesDisplay, secondsDisplay }) {
   let minutes = Number(minutesDisplay.textContent);
   let seconds = Number(secondsDisplay.textContent);
   let running;
+  let timeoutId;
 
   function countDown() {
     if (running) {
@@ -25,10 +26,13 @@ export default function Timer({ minutesDisplay, secondsDisplay }) {
         seconds = 59;
         minutes--;
         updateDisplay(minutes, seconds);
+      } else {
+        seconds--;
       }
 
-      seconds--;
-      setTimeout(countDown, 1000);
+      // Limpa o timeout anterior antes de definir um novo
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(countDown, 1000);
     }
   }
 
@@ -44,6 +48,7 @@ export default function Timer({ minutesDisplay, secondsDisplay }) {
     seconds = 0;
     minutes = 25;
     updateDisplay(minutes, "00");
+    clearTimeout(timeoutId);
   }
 
   function add() {
@@ -52,8 +57,10 @@ export default function Timer({ minutesDisplay, secondsDisplay }) {
   }
 
   function decrease() {
-    minutes--;
-    updateDisplay(minutes);
+    if (minutes > 0) {
+      minutes--;
+      updateDisplay(minutes);
+    }
   }
 
   return { countDown, stop, add, decrease, play };

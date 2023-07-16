@@ -15,6 +15,7 @@ export default function Sounds() {
   fireplace.volume = 0.5;
   coffe.volume = 0.5;
   forest.volume = 0.5;
+  buttonPress.volume = 0.5;
 
   return {
     rain,

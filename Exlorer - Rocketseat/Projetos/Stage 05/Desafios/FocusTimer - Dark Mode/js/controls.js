@@ -1,6 +1,7 @@
 import Timer from "./timer.js";
 import Sounds from "./sounds.js";
 import { toggleTheme } from "./utils.js";
+import { rainCard } from "./elements.js";
 
 export default function Controls({
   minutesDisplay,
@@ -8,10 +9,11 @@ export default function Controls({
   sunBtn,
   moonBtn,
 }) {
-  let timer = Timer({ minutesDisplay, secondsDisplay });
-  let sounds = Sounds();
-  sounds.rain.play();
+  const timer = Timer({ minutesDisplay, secondsDisplay });
+  const sounds = Sounds();
   let activeSound = sounds.rain;
+  let activeCard = rainCard;
+  sounds.rain.play();
 
   function play() {
     timer.play();
@@ -33,18 +35,16 @@ export default function Controls({
     buttonPress();
   }
 
+  // This function changes and pauses the sounds
   function toggleSound(sound) {
-/*     
-    TRABALHAR NISSO
+    // If the input is from the slider, the function will not be executed
+    let isSlider = event.target.tagName.toLowerCase() === "input";
 
-  let element = event.target.parentElement;
-    
-    if (element.tagName.toLowerCase() === 'svg') {
-      element = element.parentElement;
+    if (isSlider) {
+      return;
     }
 
-    element.add */
-
+    activeButton();
     if (sound === activeSound) {
       sound.pause();
       activeSound = null;
@@ -56,11 +56,6 @@ export default function Controls({
     buttonPress();
   }
 
-  function buttonPress() {
-    sounds.buttonPress.currentTime = 0.2;
-    sounds.buttonPress.play();
-  }
-
   function changeVolume() {
     let environment = event.target.dataset.environment;
     let currentVolume = Number(event.target.value) / 100;
@@ -68,6 +63,28 @@ export default function Controls({
     sounds[environment].volume = currentVolume;
   }
 
+  // Fixing event entry and adding "active" class to cards
+  function activeButton() {
+    let card = event.target;
+
+    if (card.tagName.toLowerCase() === "svg") {
+      card = card.parentElement;
+    } else if (card.tagName.toLowerCase() === "path") {
+      card = card.parentElement.parentElement;
+    }
+
+    if (card === activeCard) {
+      return;
+    } else {
+      if (activeCard) {
+        activeCard.classList.remove("active");
+      }
+      activeCard = card;
+      activeCard.classList.add("active");
+    }
+  }
+
+  // Basically toggle the "hide" class between two icons
   function toggleButton() {
     if (moonBtn.classList.contains("hide")) {
       toggleTheme(false);
@@ -76,6 +93,11 @@ export default function Controls({
     }
     moonBtn.classList.toggle("hide");
     sunBtn.classList.toggle("hide");
+  }
+
+  function buttonPress() {
+    sounds.buttonPress.currentTime = 0.2;
+    sounds.buttonPress.play();
   }
 
   return {

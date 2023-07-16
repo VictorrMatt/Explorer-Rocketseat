@@ -8,6 +8,7 @@
   --black-bg: #121214;
   --black-card-bg: #29292e;
   --black-card-default: #0a3442;
+  user-select: none;
 }
 
 * {
@@ -156,6 +157,7 @@ svg,
   animation-name: going-down;
 }
 
+/* THEME SWITCH - HIDING THE ICON */
 svg.hide {
   display: none;
 }

@@ -1,9 +1,3 @@
-/* body
-  .controls
-  .cards-box
-  .timer
-*/
-
 /* DARK_THEME */
 body.dark-theme {
   background-color: var(--black-bg);
@@ -28,7 +22,6 @@ body.dark-theme {
 }
 
 /* LIGHT_THEME */
-
 body.light-theme {
   background-color: var(--white-theme-0);
 }
@@ -42,6 +35,11 @@ body.light-theme {
   background-color: var(--white-card-bg);
 }
 
+.cards-box.light-theme .card.active [type="range"],
+.cards-box.light-theme .card.active [type="range"]::-webkit-slider-thumb {
+  background-color: var(--white-theme-0);
+}
+
 .cards-box.light-theme [type="range"],
 .cards-box.light-theme [type="range"]::-webkit-slider-thumb {
   background-color: var(--black-colors);
@@ -49,4 +47,46 @@ body.light-theme {
 
 .timer.light-theme {
   color: var(--black-colors);
+}
+
+/* GERAL */
+.cards-box.dark-theme .card.active svg path,
+.cards-box.light-theme .card.active svg path {
+  fill: var(--white-theme-0);
+}
+
+/* ANIMATIONS */
+.cards-box.dark-theme .card.active {
+  animation-name: card-dark;
+}
+
+.cards-box.light-theme .card.active {
+  animation-name: card-light;
+}
+
+.cards-box.dark-theme .card.active,
+.cards-box.light-theme .card.active {
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes card-light {
+  0% {
+    background-color: var(--white-card-bg);
+  }
+
+  100% {
+    background-color: var(--white-card-default);
+  }
+}
+
+@keyframes card-dark {
+  0% {
+    background-color: var(--black-card-bg);
+  }
+
+  100% {
+    background-color: var(--black-card-default);
+  }
 }
