@@ -48,6 +48,7 @@ export default function Controls({
     if (sound === activeSound) {
       sound.pause();
       activeSound = null;
+      activeButton(true);
     } else {
       activeSound && activeSound.pause();
       activeSound = sound;
@@ -64,13 +65,19 @@ export default function Controls({
   }
 
   // Fixing event entry and adding "active" class to cards
-  function activeButton() {
+  function activeButton(remove = false) {
     let card = event.target;
 
     if (card.tagName.toLowerCase() === "svg") {
       card = card.parentElement;
     } else if (card.tagName.toLowerCase() === "path") {
       card = card.parentElement.parentElement;
+    }
+
+    if (remove) {
+      activeCard.classList.remove("active");
+      activeCard = null;
+      return;
     }
 
     if (card === activeCard) {
