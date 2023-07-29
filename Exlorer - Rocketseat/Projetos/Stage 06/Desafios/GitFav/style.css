@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body * {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+#app {
+  max-width: 112rem;
+  max-height: 68rem;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+header,
+table {
+  width: 100%;
+}
+
+td.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+td img {
+  width: 5.6rem;
+  border-radius: 50%;
+}
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
