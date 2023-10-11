@@ -31,9 +31,12 @@ export const Form = styled.div`
     text-align: left;
   }
 
-  > a {
+  > div:last-of-type {
     margin-top: 48px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: ${({ theme }) => theme.COLORS.PINK};
   }
 `;
 

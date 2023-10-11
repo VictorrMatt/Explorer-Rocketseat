@@ -8,8 +8,9 @@ export function Rating({ rating, gap }) {
     let allStars = [];
 
     for (let c = 1; c <= 5; c++) {
-      allStars.push(<Container 
-        disabled={rating >= 1} />);
+      allStars.push(
+        <Container key={c} disabled={rating >= 1} />
+      );
       rating--;
     }
 

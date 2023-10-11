@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   > section {
-    .section-title {
+    div {
+      display: flex;
+    }
+
+    .movie-title {
       justify-content: space-between;
       align-items: center;
       margin-bottom: 40px;
-    }
-
-    div {
-      display: flex;
     }
 
     button {
@@ -31,3 +32,5 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const PlaceLink = styled(Link)``;

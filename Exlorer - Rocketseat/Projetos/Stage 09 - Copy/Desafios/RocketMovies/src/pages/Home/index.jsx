@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container, PlaceLink } from "./styles";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Section } from "../../components/Section";
@@ -9,13 +9,16 @@ export function Home() {
     <Container>
       <Header userName="VictorrMatt" />
       <Section>
-        <div className="section-title">
+        <div className="movie-title">
           <h2>Meus filmes</h2>
-          <Button title="Adicionar filme" />
+          <PlaceLink to="/create">
+            <Button title="Adicionar filme" />
+          </PlaceLink>
         </div>
 
         <div className="movie-cards">
           <Card
+            key="1"
             data={{
               title: "Interestellar",
               rating: 5,
@@ -28,6 +31,7 @@ export function Home() {
             }}
           />
           <Card
+            key="2"
             data={{
               title: "Som da liberdade",
               rating: 3,
@@ -40,8 +44,9 @@ export function Home() {
             }}
           />
           <Card
+            key="3"
             data={{
-              title: "Tudo em Todo o Lugar ao Mesmo Tempo",
+              title: "Tudo em Todo Lugar ao Mesmo Tempo",
               rating: 4,
               description:
                 "Uma ruptura interdimensional bagunça a realidade e uma inesperada heroína precisa usar seus novos poderes para lutar contra os perigos bizarros do multiverso.",

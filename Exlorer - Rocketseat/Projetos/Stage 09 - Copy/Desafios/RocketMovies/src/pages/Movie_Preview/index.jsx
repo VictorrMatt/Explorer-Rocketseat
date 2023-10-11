@@ -1,8 +1,9 @@
-import { Container, Clock } from "./styles";
+import { Container, Clock, PlaceLink } from "./styles";
 import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
-import { ButtonLink } from "../../components/ButtonLink";
 import { Rating } from "../../components/Rating";
+import { ButtonLink } from "../../components/ButtonLink";
+import { Button } from "../../components/Button";
 import { Tag } from "../../components/Tag";
 
 export function Movie_Preview() {
@@ -10,7 +11,9 @@ export function Movie_Preview() {
     <Container>
       <Header userName="VictorrMatt" />
       <Section>
-        <ButtonLink title="Voltar" icon />
+        <PlaceLink to="/">
+          <ButtonLink title="Voltar" icon />
+        </PlaceLink>
         <div className="movie_title">
           <h2>Interestellar</h2>
           <Rating rating="5" />

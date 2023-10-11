@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   > section {
@@ -54,4 +55,10 @@ export const Textarea = styled.textarea`
   &::placeholder {
     color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
+`;
+
+export const PlaceLink = styled(Link)`
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 `;

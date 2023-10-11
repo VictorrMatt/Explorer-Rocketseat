@@ -43,6 +43,7 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: ${({ theme }) => theme.COLORS.PINK};
   }
 
   button, a {

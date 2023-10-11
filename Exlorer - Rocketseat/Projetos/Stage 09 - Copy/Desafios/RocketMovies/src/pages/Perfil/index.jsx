@@ -1,4 +1,4 @@
-import { Container, Form, Avatar } from "./styles";
+import { Container, Form, Avatar, PlaceLink } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
@@ -8,8 +8,10 @@ export function Perfil() {
     <Container>
       <header>
         <div>
-          <FiArrowLeft />
-          <span>Voltar</span>
+          <PlaceLink to="/">
+            <FiArrowLeft />
+            <span>Voltar</span>
+          </PlaceLink>
         </div>
       </header>
 

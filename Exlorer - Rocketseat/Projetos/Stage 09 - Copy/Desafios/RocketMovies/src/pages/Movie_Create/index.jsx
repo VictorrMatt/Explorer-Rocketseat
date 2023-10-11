@@ -1,4 +1,4 @@
-import { Container, Textarea } from "./styles";
+import { Container, Textarea, PlaceLink } from "./styles";
 import { Section } from "../../components/Section";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
@@ -11,7 +11,9 @@ export function Movie_Create() {
     <Container>
       <Header userName="VictorrMatt" />
       <Section>
-        <ButtonLink title="Voltar" icon />
+        <PlaceLink to="/">
+          <ButtonLink title="Voltar" icon />
+        </PlaceLink>
         <main>
           <h2>Novo filme</h2>
           <div className="inputs">

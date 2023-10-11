@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import clock from "../../assets/Clock.svg";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   > section {
@@ -66,3 +67,5 @@ export const Clock = styled.svg`
   background-position: center;
   background-size: cover;
 `;
+
+export const PlaceLink = styled(Link)``
