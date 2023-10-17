@@ -54,4 +54,4 @@ Tecnologias Utilizadas
 *"RocketNotes" é uma aplicação completa de gerenciamento de notas e links úteis que se baseia na tecnologia React no front-end e requer um back-end com funcionalidades de autenticação, gestão de usuários e notas, segurança e banco de dados. O projeto é uma solução eficaz para ajudar os usuários a organizar suas notas de maneira prática e eficiente.*
 
 ### Autores - Gerado com ChatGpt
-@victorrmatt
+https://github.com/VictorrMatt
