@@ -18,6 +18,6 @@ module.exports = {
         "migrations"
       ),
     },
-    useNullAdDefault: true,
+    useNullAsDefault: true,
   },
 };
