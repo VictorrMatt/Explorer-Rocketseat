@@ -1,19 +1,38 @@
 import { RiShutDownLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
+
+import { useAuth } from "../../hooks/auth";
+import { api } from "../../service/api";
+
+import avatarPlaceholder from "../../assets/avatar.svg";
+
 import { Container, Profile, Logout } from "./styles";
 
 export function Header() {
+  const { signOut, user } = useAuth();
+  const navigate = useNavigate();
+
+  function handleSignOut() {
+    navigate(-1);
+    signOut();
+  }
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder;
+
   return (
     <Container>
       <Profile to="/profile">
-        <img src="https://github.com/victorrmatt.png" alt="Foto do usuário" />
+        <img src={avatarUrl} alt={`Imagem de ${user.name}.`} />
 
         <div>
           <span>Bem-vindo</span>
-          <strong>Victor Mateus</strong>
+          <strong>{user.name}</strong>
         </div>
       </Profile>
 
-      <Logout>
+      <Logout onClick={handleSignOut}>
         <RiShutDownLine />
       </Logout>
     </Container>

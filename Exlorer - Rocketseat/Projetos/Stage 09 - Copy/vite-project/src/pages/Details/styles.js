@@ -6,14 +6,14 @@ export const Container = styled.div`
   grid-template-areas:
     "header"
     "content";
+  height: 100vh;
+  width: 100%;
 
   > main {
     grid-area: content;
     overflow-y: scroll;
     padding: 64px 0;
   }
-  height: 100vh;
-  width: 100%;
 `;
 
 export const Links = styled.ul`

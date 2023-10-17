@@ -37,7 +37,7 @@ export const Menu = styled.ul`
   text-align: center;
 
   > li {
-    margin-bottom: 64px;
+    margin-top: 24px;
   }
 `;
 

@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Container, Form } from "./styles";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
@@ -5,9 +8,76 @@ import { Textarea } from "../../components/Textarea";
 import { NoteItem } from "../../components/NoteItem";
 import { Section } from "../../components/Section";
 import { Button } from "../../components/Button";
-import { Link } from "react-router-dom";
+
+import { api } from "../../service/api";
+import { ButtonText } from "../../components/ButtonText";
 
 export function New() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  const [links, setLinks] = useState([]);
+  const [newLink, setNewLink] = useState("");
+
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState("");
+
+  const navigate = useNavigate("");
+
+  function handleAddLink() {
+    if (newLink) {
+      setLinks((prevState) => [...prevState, newLink]);
+      setNewLink("");
+    }
+  }
+
+  function handleRemoveLink(deleted) {
+    setLinks((prevState) => prevState.filter((link) => link !== deleted));
+  }
+
+  function handleAddTag() {
+    if (newTag) {
+      setTags((prevState) => [...prevState, newTag]);
+      setNewTag("");
+    }
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags((prevState) => prevState.filter((link) => link !== deleted));
+  }
+
+  function handleBack() {
+    navigate(-1);
+  }
+
+  async function handleNewNote() {
+    if (!title) {
+      return alert("Digite o título da nota.");
+    }
+
+    if (newLink) {
+      return alert(
+        "Você deixou um link no campo para adicionar, mas não clicou em salvar. Clique para adicionar ou deixe o campo vázio."
+      );
+    }
+
+    if (newTag) {
+      return alert(
+        "Você deixou uma tag no campo para adicionar, mas não clicou em salvar. Clique para adicionar ou deixe o campo vázio."
+      );
+    }
+
+    await api.post("/notes", {
+      title,
+      description,
+      tags,
+      links,
+    });
+
+    alert("Nota criada com sucesso!");
+    handleback();
+  }
+
   return (
     <Container>
       <Header></Header>
@@ -15,23 +85,58 @@ export function New() {
         <Form>
           <header>
             <h1>Criar nota</h1>
-            <Link to="/">Voltar</Link>
+            <ButtonText onClick={handleBack} title="Voltar"></ButtonText>
           </header>
 
-          <Input placeholder="Título" />
-          <Textarea placeholder="Observações" />
+          <Input
+            placeholder="Título"
+            onChange={(event) => setTitle(event.target.value)}
+          />
+          <Textarea
+            placeholder="Observações"
+            onChange={(event) => setDescription(event.target.value)}
+          />
+
           <Section title="Links úteis">
-            <NoteItem value="https://rocketseat.com.br" />
-            <NoteItem isNew placeholder="Novo link" />
+            {links.map((link, index) => (
+              <NoteItem
+                key={String(index)}
+                value={link}
+                onClick={() => {
+                  handleRemoveLink(link);
+                }}
+              />
+            ))}
+            <NoteItem
+              $isNew
+              placeholder="Novo link"
+              value={newLink}
+              onChange={(event) => setNewLink(event.target.value)}
+              onClick={handleAddLink}
+            />
           </Section>
 
           <Section title="Marcadores">
             <div className="tags">
-              <NoteItem value="React" />
-              <NoteItem isNew placeholder="Nova tag" />
+              {tags.map((tag, index) => (
+                <NoteItem
+                  key={index}
+                  value={tag}
+                  onClick={() => {
+                    handleRemoveTag(tag);
+                  }}
+                />
+              ))}
+              <NoteItem
+                $isNew
+                placeholder="Nova tag"
+                onChange={(event) => setNewTag(event.target.value)}
+                value={newTag}
+                onClick={handleAddTag}
+              />
             </div>
           </Section>
-          <Button title="Salvar" />
+          <Button title="Salvar" onClick={handleNewNote} />
         </Form>
       </main>
     </Container>
