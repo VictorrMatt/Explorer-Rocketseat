@@ -27,7 +27,7 @@ Embora a documentação do back-end específico não tenha sido fornecida, a apl
 - ``Pesquisa de Notas``: *Os usuários devem ser capazes de pesquisar notas com base em títulos e tags.*
 - ``Segurança``: *Deve haver medidas de segurança, como a geração e validação de tokens JWT (JSON Web Tokens) para proteger as rotas e dados sensíveis.*
 
-✔️Tecnologias Utilizadas:
+## ✔️Tecnologias Utilizadas:
 
 ### Front-End:
 
