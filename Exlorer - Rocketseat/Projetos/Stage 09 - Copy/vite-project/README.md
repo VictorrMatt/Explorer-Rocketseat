@@ -54,8 +54,8 @@ Embora a documentação do back-end específico não tenha sido fornecida, a apl
 ### 📝Resumo 
 *"RocketNotes" é uma aplicação completa de gerenciamento de notas e links úteis que se baseia na tecnologia React no front-end e requer um back-end com funcionalidades de autenticação, gestão de usuários e notas, segurança e banco de dados. O projeto é uma solução eficaz para ajudar os usuários a organizar suas notas de maneira prática e eficiente.*
 
-### 🤝Desenvolvedores
-<table>
+## 🤝Desenvolvedores
+<table align="center">
   <tr>
     <td align="center">
       <a href="https://github.com/victorrmatt">
@@ -65,9 +65,12 @@ Embora a documentação do back-end específico não tenha sido fornecida, a apl
         </sub>
       </a>
     </td>
+    <td>
+      <img width="300" src="https://i2.wp.com/allhtaccess.info/wp-content/uploads/2018/03/programming.gif?fit=1281%2C716&ssl=1" />
+    </td>
   </tr>
 </table>
 
 <p align="center">
-<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+  <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
