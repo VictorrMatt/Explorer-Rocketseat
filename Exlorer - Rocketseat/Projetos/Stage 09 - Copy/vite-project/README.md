@@ -14,23 +14,17 @@
 - ``New``: *Permite aos usuários criar novas notas, fornecendo campos para título, descrição, links e tags.*
 - ``Details``: *Exibe detalhes de uma nota específica, incluindo títulos, descrições, links e tags. Também oferece a opção de excluir a nota.*
 - ``Profile``: *Permite aos usuários atualizar suas informações pessoais, como nome, e-mail, senha e imagem de perfil.*
-Componentes Reutilizáveis: O projeto inclui diversos componentes reutilizáveis para garantir consistência e facilidade de manutenção.
-
-- Roteamento: O projeto utiliza React Router para gerenciar as rotas da aplicação, direcionando os usuários para as páginas apropriadas.
-
-- Requisições à API: As páginas fazem chamadas à API back-end para recuperar e atualizar dados, como notas e informações do usuário.
+- `Componentes Reutilizáveis`: O projeto inclui diversos componentes reutilizáveis para garantir consistência e facilidade de manutenção.
+- `Roteamento`: O projeto utiliza React Router para gerenciar as rotas da aplicação, direcionando os usuários para as páginas apropriadas.
+- `Requisições à API`: As páginas fazem chamadas à API back-end para recuperar e atualizar dados, como notas e informações do usuário.
 
 ## Back-End
 Embora a documentação do back-end específico não tenha sido fornecida, a aplicação requer um back-end para fornecer as seguintes funcionalidades essenciais:
 
 - ``Autenticação``: *O back-end deve oferecer autenticação de usuário, permitindo que os usuários façam login com segurança e mantenham sessões ativas.*
-
 - ``Gestão de Usuários``: *O back-end deve permitir o cadastro e atualização de informações de usuário, como nome, e-mail, senha e imagem de perfil.*
-
 - ``Gestão de Notas``: *Deve ser possível criar, editar, visualizar e excluir notas. As notas podem incluir títulos, descrições, links e tags.*
-
 - ``Pesquisa de Notas``: *Os usuários devem ser capazes de pesquisar notas com base em títulos e tags.*
-
 - ``Segurança``: *Deve haver medidas de segurança, como a geração e validação de tokens JWT (JSON Web Tokens) para proteger as rotas e dados sensíveis.*
 
 ✔️Tecnologias Utilizadas:
