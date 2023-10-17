@@ -56,6 +56,7 @@ Embora a documentação do back-end específico não tenha sido fornecida, a apl
 
 ## 🤝Desenvolvedores
 <table align="center">
+  
   <tr>
     <td align="center">
       <a href="https://github.com/victorrmatt">
@@ -63,6 +64,12 @@ Embora a documentação do back-end específico não tenha sido fornecida, a apl
         <sub>
           <b>Victor Mateus</b>
         </sub>
+        <p align="center">
+          <a href="https://www.linkedin.com/in/victor-mateus/" alt="LinkedIn">
+          <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=#"/></a>
+          <a href="https://api.whatsapp.com/send?phone=5587988278980&text=Olá%20Tudo%20Bem?%0DVenho%20pelo%20GitHub." alt="WhatsApp">
+          <img src="https://img.shields.io/badge/-WhatsApp-25d366?style=flat-square&labelColor=25d366&logo=whatsapp&logoColor=white&link=#"/></a>
+        </p>
       </a>
     </td>
     <td>
