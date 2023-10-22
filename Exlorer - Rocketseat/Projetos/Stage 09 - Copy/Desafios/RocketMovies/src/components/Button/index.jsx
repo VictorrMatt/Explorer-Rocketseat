@@ -1,8 +1,8 @@
 import { Container } from "./styles";
 
-export function Button({ title, loading = false, alterColors  }) {
+export function Button({ title, loading = false, $altercolors, ...rest }) {
   return (
-    <Container disabled={loading} alterColors={alterColors}>
+    <Container disabled={loading} $altercolors={$altercolors} {...rest}>
       {loading ? "Loading..." : title}
     </Container>
   );

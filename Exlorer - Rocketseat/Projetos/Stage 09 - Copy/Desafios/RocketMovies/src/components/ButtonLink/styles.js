@@ -5,7 +5,7 @@ export const Container = styled.a`
   display: flex;
   align-items: center;
   gap: 8px;
-  color: ${({ theme }) => theme.COLORS.PINK};
+  color: ${({ theme, stressed }) => (stressed ? "red" : theme.COLORS.PINK)};
   margin-bottom: 25px;
 `;
 

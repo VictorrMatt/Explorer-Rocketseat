@@ -1,23 +1,53 @@
 import { Container, PlaceLink } from "./styles";
 import { Input } from "../Input";
 
-export function Header({ userName }) {
-  const gitHubProfileUrl = `https://github.com/${userName}.png`;
+import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
+
+import { api } from "../../services/api";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+
+export function Header({ userName, handleSearch, ...rest }) {
+  const { logout, user } = useAuth();
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder;
+
+  const navigate = useNavigate();
+
+  function handleProfile() {
+    navigate("/profile");
+  }
+
+  function handleHome() {
+    navigate("/");
+  }
+
+  function handlelogout() {
+    logout();
+  }
+
   return (
     <Container>
-      <PlaceLink to="/">
+      <PlaceLink onClick={handleHome}>
         <h2>RocketMovies</h2>
       </PlaceLink>
-      <Input placeholder="Pesquisar pelo título" />
+      <Input
+        placeholder="Pesquisar pelo título"
+        onChange={(event) => {
+          handleSearch(event.target.value);
+        }}
+      />
       <div className="userData">
         <div>
-          <PlaceLink to="/perfil">
-            <h2>{userName}</h2>
+          <PlaceLink onClick={handleProfile}>
+            <h2 onClick={handleProfile}>{user.name}</h2>
           </PlaceLink>
-          <a href="/">sair</a>
+          <a onClick={handlelogout}>sair</a>
         </div>
-        <PlaceLink to="/perfil">
-          <img src={gitHubProfileUrl} alt="imagem do usuário." />
+        <PlaceLink onClick={handleProfile}>
+          <img src={avatarUrl} alt={user.name} />
         </PlaceLink>
       </div>
     </Container>

@@ -2,9 +2,9 @@ import { Container } from "./styled";
 import { Tag } from "../Tag";
 import { Rating } from "../Rating";
 
-export function Card({ data }) {
+export function Card({ data, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       <h2>{data.title}</h2>
       <div>
         <Rating className="rating" rating={data.rating} />

@@ -27,6 +27,7 @@ export const Container = styled.header`
     img {
       width: 64px;
       height: 64px;
+      border-radius: 50%;
     }
 
     h2 {
@@ -43,4 +44,4 @@ export const Container = styled.header`
   }
 `;
 
-export const PlaceLink = styled(Link)``
+export const PlaceLink = styled.a``;

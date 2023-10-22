@@ -29,6 +29,10 @@ export const Container = styled.div`
       gap: 24px;
       max-height: 600px;
       overflow: auto;
+
+      div {
+        cursor: pointer;
+      }
     }
   }
 `;
