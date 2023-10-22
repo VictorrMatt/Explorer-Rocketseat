@@ -1,4 +1,5 @@
 require("express-async-errors");
+require("dotenv/config");
 
 const uploadConfig = require("./configs/upload");
 
@@ -35,7 +36,7 @@ app.use((error, request, response, next) => {
   });
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => {
   console.log(`Server is running on Port ${PORT}`);
 });
