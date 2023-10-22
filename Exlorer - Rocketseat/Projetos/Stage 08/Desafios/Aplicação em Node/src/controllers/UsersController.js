@@ -29,10 +29,12 @@ class UsersController {
 
   async update(req, res) {
     const { name, email, password, old_password, avatar } = req.body;
-    const { id } = req.params;
+    const user_id = req.user.id;
 
     const database = await sqliteConnection();
-    const user = await database.get("SELECT * FROM users WHERE id = (?)", [id]);
+    const user = await database.get("SELECT * FROM users WHERE id = (?)", [
+      user_id,
+    ]);
 
     /* user not found */
     if (!user) {
@@ -79,32 +81,10 @@ class UsersController {
       avatar = (?),
       updated_at = DATETIME('now')
       WHERE id = (?)`,
-      [user.name, user.email, user.password, user.avatar, id]
+      [user.name, user.email, user.password, user.avatar, user_id]
     );
 
     return res.status(200).json();
-  }
-
-  async delete(req, res) {
-    const { id } = req.params;
-
-    const database = await sqliteConnection();
-    await database.run("DELETE FROM users WHERE id = (?)", [id]);
-
-    return res.status(200).json();
-  }
-
-  async read(req, res) {
-    const { id } = req.params;
-
-    const database = await sqliteConnection();
-    const user = await database.get("SELECT * FROM users WHERE id = (?)", [id]);
-
-    if (!user) {
-      throw new AppError("O usuario não foi encontrado");
-    }
-
-    return res.json(user);
   }
 }
 
